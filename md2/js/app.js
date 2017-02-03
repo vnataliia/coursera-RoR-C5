@@ -10,7 +10,6 @@ ToBuyController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyController(ShoppingListCheckOffService) {
   var toBayList = this;
   toBayList.items = ShoppingListCheckOffService.getItemsBay();
-  toBayList.empty = ShoppingListCheckOffService.checkEmptyToBayList;
   toBayList.removeItemBay = function (itemIndex) {
     ShoppingListCheckOffService.removeItemBay(itemIndex);    
   };
@@ -20,7 +19,6 @@ AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
   var boughtList = this;
   boughtList.items = ShoppingListCheckOffService.getItemsBought();
-  boughtList.empty = ShoppingListCheckOffService.checkEmptyBoughtList;
 }
 
 function ShoppingListCheckOffService() {
@@ -57,14 +55,6 @@ function ShoppingListCheckOffService() {
 
   service.getItemsBought = function () {
     return boughtList;
-  };
-
-  service.checkEmptyBoughtList = function () {
-    return boughtList.length == 0 ? true : false;
-  };
-
-  service.checkEmptyToBayList = function () {
-    return initToBayList.length == 0 ? true : false;
   };
 
   service.removeItemBay = function (itemIndex) {
