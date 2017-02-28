@@ -41,6 +41,7 @@ function NarrowItDownController(MenuSearchService) {
   };
 
   list.removeItem = function (index) {
+  	  list.firstTime = false;
       list.foundItems.splice(index, 1);
   };
 
