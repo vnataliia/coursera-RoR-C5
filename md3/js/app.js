@@ -35,13 +35,13 @@ function NarrowItDownController(MenuSearchService) {
       promise.then(function (response) {
          list.firstTime = false;
          list.foundItems = Array.from(response);
+         console.log(list.foundItems);
       }).catch(function (error) {
          console.log(error)
       });
   };
 
   list.removeItem = function (index) {
-  	  list.firstTime = false;
       list.foundItems.splice(index, 1);
   };
 
