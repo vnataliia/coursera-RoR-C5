@@ -28,11 +28,13 @@ function FoundItemsDirectiveController () {};
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
+  list.firstTime = true;
   list.foundItems = [];
   list.searchMenu = function (searchTerm) {
       var promise = MenuSearchService.getMatchedMenuItems(searchTerm)
       promise.then(function (response) {
-         list.foundItems = Array.from(response)
+         list.firstTime = false;
+         list.foundItems = Array.from(response);
       }).catch(function (error) {
          console.log(error)
       });
@@ -43,7 +45,7 @@ function NarrowItDownController(MenuSearchService) {
   };
 
   list.empty = function () {
-      return (list.foundItems.length === 0);
+      return !list.firstTime && (list.foundItems.length === 0);
   };
 }
 
