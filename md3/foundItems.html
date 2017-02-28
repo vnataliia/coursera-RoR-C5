@@ -1,9 +1,8 @@
   <h2 ng-if="items.empty()">Nothing found</h2>
-  <p>
+  <hr>
   <ul class="row table-row">
     <li ng-repeat="item in items.foundItems">
       <b>{{ item.name }} </b> {{ item.description }}
       <button class="btn-remove" ng-click="items.onRemove({index: $index})">Don't want this one!</button>
     </li>
   </ul>
-  </p>
