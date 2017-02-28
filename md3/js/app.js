@@ -28,9 +28,14 @@ function FoundItemsDirectiveController () {};
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
+  list.searchTerm = '';
   list.firstTime = true;
   list.foundItems = [];
   list.searchMenu = function (searchTerm) {
+  	  if (searchTerm == '') {
+  	  	list.foundItems = [];
+  	  	return;
+  	  }
       var promise = MenuSearchService.getMatchedMenuItems(searchTerm)
       promise.then(function (response) {
          list.firstTime = false;
