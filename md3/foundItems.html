@@ -2,7 +2,7 @@
   <br><br><br><hr>
   <ul class="row table-row">
     <li ng-repeat="item in items.foundItems">
-      <b>{{ item.name }} </b> {{ item.description }}
+      <b>{{ item.name }}</b> [ {{short_name}} ] {{ item.description }}
       <button class="btn-remove" ng-click="items.onRemove({index: $index})">Don't want this one!</button>
     </li>
   </ul>
