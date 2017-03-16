@@ -9,7 +9,7 @@
             template: '<a ui-sref="categories">Welcome to our Restaurant</a>'
         }).state('categories', {
             url: '/categories',
-            templateUrl: 'templates/categories.html',
+            templateUrl: 'categories.html',
             controller: 'CategoriesController as categories',
             resolve: {
                 categories: ['MenuDataService', function (MenuDataService) {
@@ -30,5 +30,5 @@
 
     angular.module('MenuApp').config(RoutesConfig);
     RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-    
+
 })();
