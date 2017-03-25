@@ -2,7 +2,7 @@
     'use strict';
 
     var RoutesConfig = function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/tabnv');
 
         $stateProvider.state('home', {
             url: '/',
