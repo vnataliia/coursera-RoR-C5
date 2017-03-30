@@ -10,13 +10,13 @@
             template: '<a ui-sref="categories">Welcome to our Restaurant</a>'
         }).state('categories', {
             url: '/categories',
-            templateUrl: 'templates/categories.html'/*,
+            templateUrl: 'templates/categories.html',
             controller: 'CategoriesController as categories',
             resolve: {
                 categories: ['MenuDataService', function (MenuDataService) {
                     return MenuDataService.getAllCategories();
                 }]
-            }*/
+            }
         }).state('items', {
             url: '/items/{short_name}',
             templateUrl: 'templates/items.html',
