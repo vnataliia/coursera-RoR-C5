@@ -2,8 +2,10 @@
     'use strict';
     angular.module('MenuApp').config(RoutesConfig);
     RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+console.log('r st');
     function RoutesConfig ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
+console.log('r st 1');
 
         $stateProvider.state('home', {
             url: '/',
@@ -19,7 +21,7 @@
                 }]
             }
             // v5
-        }).state('items', {
+/*        }).state('items', {
             url: '/items/{short_name}',
             templateUrl: 'templates/items.html',
             controller: 'ItemsController as itemsCtrl',
@@ -27,8 +29,10 @@
                 items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
                     return MenuDataService.getItemsForCategory($stateParams.shortName);
                 }]
-            }
+            }*/
         });
+console.log('r st 99');
     };
+console.log('r end');
     
 })();
