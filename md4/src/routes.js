@@ -22,7 +22,7 @@ console.log('r st 1');
             }
             // v5
         }).state('items', {
-            url: '/items/{short_name}',
+            url: '/items/{shortName}',
             templateUrl: 'templates/items.html',
             controller: 'ItemsController as itemsCtrl',
             resolve: {
