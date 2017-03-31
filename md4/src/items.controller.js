@@ -9,6 +9,6 @@
     console.log('items=', items);
     console.log('ic=', this);
     
-//    itemsCtrl.items = items.menu_items;
+    itemsCtrl.items = items.menu_items;
   };
 })();
