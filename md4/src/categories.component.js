@@ -4,7 +4,7 @@
     angular.module('MenuApp').component('categories', {
         templateUrl: 'templates/showCategories.html',
         bindings: {
-            categories: '<'
+            items: '<'
         }
     });
 })();
