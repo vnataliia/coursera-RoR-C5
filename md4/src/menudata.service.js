@@ -16,11 +16,11 @@
 			return $http({url: (url + 'categories.json')}).then(function (result) { return result.data; });
 		};
 	    			console.log('http0 5');
-
+/*
 		service.getItemsForCategory(categoryShortName) = function(){
 			return $http({url: (url + 'menu_items.json?category=' + categoryShortName)}).then(function (result) { return result.data; });
 		}
-	    			console.log('http0 e');
+*/	    			console.log('http0 e');
 	    			console.log(service);
 	    			console.log('http0 e', service);
 	}
