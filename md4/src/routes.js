@@ -14,6 +14,7 @@
             controller: 'CategoriesController as cCtrl',
             resolve: {
                 categories: ['MenuDataService', function (MenuDataService) {
+                    console.log('resolve');
                     return MenuDataService.getAllCategories();
                 }]
             }
