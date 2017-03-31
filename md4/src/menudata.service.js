@@ -1,8 +1,8 @@
 (function() {
     'use strict';
 
-    MenuDataService.$inject = ['$http'];
     angular.module('data').service('MenuDataService', MenuDataService);
+    MenuDataService.$inject = ['$http'];
 	
     function MenuDataService($http) {
 		var service = this;
