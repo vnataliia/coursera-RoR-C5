@@ -19,7 +19,7 @@
 	    
 		service.getItemsForCategory = function(categoryShortName) {
 			console.log('http item');
-			return $http({url: (url + 'menu_items.json?category=' + categoryShortName)}).then(function (result) { console.log(result); return {menu_items: []};return result.data; });
+			return $http({url: (url + 'menu_items.json?category=' + categoryShortName)}).then(function (result) { console.log(result.data); return {menu_items: []};return result.data; });
 		}
 	    			console.log('http0 e');
 	    			console.log(service);
