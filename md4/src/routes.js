@@ -11,12 +11,12 @@
         }).state('categories', {
             url: '/categories',
             templateUrl: 'templates/categories.html',
-            controller: 'CategoriesController as cCtrl',/*
+            controller: 'CategoriesController as cCtrl',
             resolve: {
                 categories: ['MenuDataService', function (MenuDataService) {
                     return MenuDataService.getAllCategories();
                 }]
-            }*/
+            }
             // v5
         }).state('items', {
             url: '/items/{short_name}',
