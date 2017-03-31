@@ -13,7 +13,7 @@
 	    			console.log('http0 2');
 		service.getAllCategories = function(){
 			console.log('http');
-			return $http({url: (url + 'categories.json')}).then(function (result) { return result.data; });
+			return $http({url: (url + 'categories.json')}).then(function (result) { console.log(result); return result.data; });
 		};
 	    			console.log('http0 5');
 	    
