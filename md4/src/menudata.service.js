@@ -5,6 +5,8 @@
     MenuDataService.$inject = ['$http'];
 	
     function MenuDataService($http) {
+	    			console.log('http0');
+
 		var service = this;
 		var url = 'https://davids-restaurant.herokuapp.com/';
 
