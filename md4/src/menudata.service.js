@@ -12,7 +12,7 @@
 
 		service.getAllCategories = function(){
 			console.log('http');
-			return $http.get(url + 'categories.json');
+			return $http.get(url + 'categories.json').then(function (result) { return result; });
 		};
 
 		service.getItemsForCategory(categoryShortName) = function(){
