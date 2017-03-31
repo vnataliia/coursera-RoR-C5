@@ -17,7 +17,7 @@
                     return MenuDataService.getAllCategories();
                 }]
             }
-            // v3
+            // v4
         }).state('items', {
             url: '/items/{short_name}',
             templateUrl: 'templates/items.html',
