@@ -9,7 +9,7 @@
 		var url = 'https://davids-restaurant.herokuapp.com/';
 
 		service.getAllCategories = function(){
-			console.log($http.get(url + 'categories.json'));
+			console.log('http');
 			return $http.get(url + 'categories.json');
 		};
 
