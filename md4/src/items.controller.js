@@ -6,6 +6,8 @@
   ItemsController.$inject = ['items'];
   function ItemsController(items) {
     var itemsCtrl = this;
-    itemsCtrl.items = items.menu_items;
+    console.log('ic=', this);
+    
+//    itemsCtrl.items = items.menu_items;
   };
 })();
