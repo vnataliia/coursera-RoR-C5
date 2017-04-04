@@ -13,13 +13,15 @@
 	    			console.log('http0 2');
 		service.getAllCategories = function(){
 			console.log('http');
-			return $http({url: (url + 'categories.json')}).then(function (result) { console.log(result); return result.data; });
+			return $http({url: (url + 'categories.json')})
+				.then(function (result) { console.log(result); return result.data; });
 		};
 	    			console.log('http0 5');
 	    
 		service.getItemsForCategory = function(categoryShortName) {
 			console.log('http item');
-			return $http({url: (url + 'menu_items.json?category=' + categoryShortName)}).then(function (result) { console.log(result.data); return result.data; });
+			return $http({url: (url + 'menu_items.json?category=' + categoryShortName)})
+				.then(function (result) { console.log(result); return result.data; });
 		}
 	    			console.log('http0 e');
 	    			console.log('service = ' + service);
