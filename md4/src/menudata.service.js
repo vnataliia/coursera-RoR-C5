@@ -22,8 +22,8 @@
 			return $http({url: (url + 'menu_items.json?category=' + categoryShortName)}).then(function (result) { console.log(result.data); return result.data; });
 		}
 	    			console.log('http0 e');
-	    			console.log(service);
-	    			console.log('http0 e', service);
+	    			console.log('service = ' + service);
+	    			console.log('http0 e = ' + service);
 	}
 
 })();
