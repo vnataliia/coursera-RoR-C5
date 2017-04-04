@@ -29,7 +29,7 @@ console.log('r st 1');
                 items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
 //                    return MenuDataService.getItemsForCategory($stateParams.shortName);
                       var aI = MenuDataService.getItemsForCategory($stateParams.shortName);
-                    console.log("aI=" + aI);
+                    console.log("aI=", aI);
                     return aI;
                 }]
             }
