@@ -7,8 +7,9 @@
   function ItemsController(items) {
     var itemsCtrl = this;
     console.log('items=', items);
-    console.log('ic=', this);
+
     
     itemsCtrl.items = items.menu_items;
+    console.log('itemsCtrl.items = ', itemsCtrl.items);
   };
 })();
