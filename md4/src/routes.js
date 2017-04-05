@@ -2,10 +2,8 @@
     'use strict';
     angular.module('MenuApp').config(RoutesConfig);
     RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-console.log('r st');
     function RoutesConfig ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
-console.log('r st 1');
 
         $stateProvider.state('home', {
             url: '/',
@@ -16,26 +14,19 @@ console.log('r st 1');
             controller: 'CategoriesController as cCtrl',
             resolve: {
                 categories: ['MenuDataService', function (MenuDataService) {
-                    console.log('resolve');
                     return MenuDataService.getAllCategories();
                 }]
             }
-            // v5
         }).state('items', {
             url: '/items/{shortName}',
             templateUrl: 'templates/items.html',
             controller: 'ItemsController as itemsCtrl',
             resolve: {
                 items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
-//                    return MenuDataService.getItemsForCategory($stateParams.shortName);
-                      var aI = MenuDataService.getItemsForCategory($stateParams.shortName);
-                    console.log("aI=", aI);
-                    return aI;
+                    return MenuDataService.getItemsForCategory($stateParams.shortName);
                 }]
             }
         });
-console.log('r st 99');
     };
-console.log('r end');
     
 })();
