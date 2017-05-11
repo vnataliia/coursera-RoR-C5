@@ -6,13 +6,13 @@
 
   MyInfoController.$inject = ['MyInfoController', 'ApiPath'];
   function MyInfoController(MyInfoController, ApiPath){
-    var MyInfoCtrl = this;
-    MyInfoCtrl.show = true;
-    MyInfoCtrl.MyInfoController = MyInfo;
-    MyInfoCtrl.ApiPath = ApiPath;
+    var myInfoCtrl = this;
+    myInfoCtrl.show = true;
+    myInfoCtrl.MyInfoController = MyInfoController;
+    myInfoCtrl.ApiPath = ApiPath;
 
-    if(MyInfoCtrl.firstname !== undefined){
-      MyInfoCtrl.show = false;
+    if(myInfoCtrl.firstname !== undefined){
+      myInfoCtrl.show = false;
     }
 
   }
