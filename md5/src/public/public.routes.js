@@ -34,23 +34,23 @@ function routeConfig ($stateProvider) {
       url: '/menu/{category}',
       templateUrl: 'src/public/menu-items/menu-items.html',
       controller: 'MenuItemsController',
-      controllerAs: 'menuItemsCtrl', /*
+      controllerAs: 'menuItemsCtrl',
       resolve: {
         menuItems: ['$stateParams','MenuService', function ($stateParams, MenuService) {
           return MenuService.getMenuItems($stateParams.category);
         }]
-      }*/
+      }
     })
     .state('public.myinfo', {
       url: '/myinfo',
       templateUrl: 'src/public/myinfo/myinfo.html',
       controller: 'MyInfoController',
-      controllerAs: 'myInfoCtrl',
+      controllerAs: 'myInfoCtrl', /*
       resolve: {
         info: ['MenuService', function(MenuService){
           return MenuService.getMyInfo();
         }]
-      }
+      } */
     })
     .state('public.signup', {
       url: '/signup',
