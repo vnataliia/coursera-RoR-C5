@@ -4,11 +4,11 @@
   angular.module('public')
   .controller('MyInfoController', MyInfoController);
 
-  MyInfoController.$inject = ['MyInfoController', 'ApiPath'];
-  function MyInfoController(MyInfoController, ApiPath){
+  MyInfoController.$inject = ['info', 'ApiPath'];
+  function MyInfoController(info, ApiPath){
     var myInfoCtrl = this;
     myInfoCtrl.show = true;
-    myInfoCtrl.MyInfoController = MyInfoController;
+    myInfoCtrl.info = info;
     myInfoCtrl.ApiPath = ApiPath;
 
     if(myInfoCtrl.firstname !== undefined){
