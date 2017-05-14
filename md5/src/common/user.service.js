@@ -9,8 +9,8 @@
     var service = this;
 
     service.signed = false;
-    service.registeredUser = {};
-    service.registeredFavDish = {};
+    service.info = {};
+    service.fav = {};
   }
 
 })();
