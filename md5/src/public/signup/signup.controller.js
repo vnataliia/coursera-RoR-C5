@@ -4,18 +4,18 @@
   angular.module('public')
   .controller('SignUpController', SignUpController);
 
-  SignUpController.$inject = ['SignUpService','MenuService'];
-  function SignUpController(SignUpService, MenuService){
+  SignUpController.$inject = ['UserService','MenuService'];
+  function SignUpController(UserService, MenuService){
     var $signUpCtrl = this;
     $signUpCtrl.user = {};
     $signUpCtrl.itemFound = true;
   
     $signUpCtrl.submit = function () {
-      SignUpService.getFavoriteDish($signUpCtrl.user.favoriteDish)
+      UserService.getFavoriteDish($signUpCtrl.user.favoriteDish)
        .then(function (result) {
           $signUpCtrl.itemFound = true;
           $signUpCtrl.user.favoriteDish = result;
-          SignUpService.user = $signUpCtrl.user;
+          UserService.user = $signUpCtrl.user;
           $signUpCtrl.completed = true;
         })
         .catch(function (result) {
