@@ -5,50 +5,69 @@
   	</div>
 	
 	<div ng-show="!myInfoCtrl.show">
-    <div class="row">
-      <div class="col-md-3">
-        <span>First name : </span>
+  <form name="userForm" ng-if="!signUpCtrl.signedUp" novalidate>
+    <fieldset>
+    <div class="form-group row">
+      <label for="fName" class="col-xs-2 col-form-label">First Name</label>
+      <div class="col-xs-10" ng-class="{ 'has-error': userForm.fName.$invalid && userForm.fName.$touched }">
+        <input type="text" name="fName" class="form-control" id="fName" placeholder="Enter First Name" ng-model="signUpCtrl.reg.firstName" required/>
+        <p class="help-block" ng-if="userForm.fName.$invalid && userForm.fName.$touched">
+            First name is required.
+        </p>
       </div>
-      <div class="col-md-3">{{ myInfoCtrl.info.firstname }}</div>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <span>Last name : </span>
+
+    <div class="form-group row">
+      <label for="lName" class="col-xs-2 col-form-label">Last Name</label>
+      <div class="col-xs-10" ng-class="{ 'has-error': userForm.lName.$invalid && userForm.lName.$touched }">
+        <input type="text" name="lName" class="form-control" id="lName" placeholder="Enter Last Name" ng-model="signUpCtrl.reg.lastName" required/>
+        <p class="help-block" ng-if="userForm.lName.$invalid && userForm.lName.$touched">
+            Last name is required.
+        </p>
       </div>
-      <div class="col-md-3">{{ myInfoCtrl.info.lastname }}</div>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <span>Email Address : </span>
+
+    <div class="form-group row">
+      <label for="email" class="col-xs-2 col-form-label">Email</label>
+      <div class="col-xs-10" ng-class="{ 'has-error': userForm.email.$invalid && userForm.email.$touched }">
+        <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email" ng-model="signUpCtrl.reg.email" required/>
+        <p class="help-block" ng-if="userForm.email.$invalid && userForm.email.$touched">
+            Email is required.
+        </p>
       </div>
-      <div class="col-md-3">{{ myinfoCtrl.info.email }}</div>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <span>Phone# : </span>
+
+    <div class="form-group row">
+      <label for="phoneNumber" class="col-xs-2 col-form-label">Phone Number</label>
+      <div class="col-xs-10" ng-class="{ 'has-error': userForm.phoneNumber.$invalid && userForm.phoneNumber.$touched }">
+        <input type="tel" name="phoneNumber" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" ng-model="signUpCtrl.reg.phoneNumber" required/>
+        <p class="help-block" ng-if="userForm.phoneNumber.$invalid && userForm.phoneNumber.$touched">
+            Phone Number is required.
+        </p>
       </div>
-      <div class="col-md-3">{{ myinfoCtrl.info.phone }}</div>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <span>Favorite Dish (menu#) : </span>
+
+    <div class="form-group row">
+      <label for="favDish" class="col-xs-2 col-form-label">Your Favourite Dish (short name code)</label>
+      <div class="col-xs-10" ng-class="{ 'has-error': (userForm.favDish.$invalid && userForm.favDish.$touched) || signUpCtrl.favDishInvalid }">
+        <input type="text" name="favDish" class="form-control" id="favDish" placeholder="Enter Your Favourite Dish" ng-model="signUpCtrl.reg.favDish" required/>
+        <p class="help-block" ng-if="userForm.favDish.$invalid && userForm.favDish.$touched">
+            Short name of your favourite dish is required.
+        </p>
+        <p class="help-block" ng-if="signUpCtrl.favDishInvalid">
+            No such menu number exists.
+        </p>
       </div>
-      <div class="col-md-3">{{ myinfoCtrl.info.favDish }}</div>
     </div>
-    <div class="menu-item-tile col-md-12">
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="menu-item-photo">
-            <img class="img-responsive" width="250" height="150"
-              ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.info.shortName}}.jpg" alt="{{myInfoCtrl.info.dishName}}">
-          </div>
-        </div>
-        <div class="menu-item-description col-sm-7">
-          <h3 class="menu-item-title">{{myInfoCtrl.info.dishName}}</h3>
-          <p class="menu-item-details">{{myInfoCtrl.info.dishDesc}}</p>
-        </div>
-      </div>
-      <hr class="visible-xs">
-    </div>
+    <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
+
+    </fieldset>
+    
+  </form>
+
+  <div class="text-center" ng-if="signUpCtrl.signed">
+     Your information has been saved. Go to <a ui-sref="public.myinfo">My Info</a> to see your information.
+  </div>
+
   </div>
 </div> <!-- container -->
