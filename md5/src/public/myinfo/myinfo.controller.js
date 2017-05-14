@@ -4,13 +4,13 @@
   angular.module('public')
   .controller('MyInfoController', MyInfoController);
 
-  MyInfoController.$inject = ['UserService'];
-  function MyInfoController(UserService){
+  MyInfoController.$inject = ['MyInfoService'];
+  function MyInfoController(MyInfoService){
     var $myInfoCtrl = this;
     $myInfoCtrl.show = true;
-    $myInfoCtrl.signedUp = UserService.signedUp; 
-    $myInfoCtrl.info = UserService.info;
-    $myInfoCtrl.fav = UserService.fav;
+    $myInfoCtrl.signedUp = MyInfoService.signedUp; 
+    $myInfoCtrl.info = MyInfoService.info;
+    $myInfoCtrl.fav = MyInfoService.fav;
 
     if($myInfoCtrl.info.firstname !== undefined){
       $myInfoCtrl.show = false;
