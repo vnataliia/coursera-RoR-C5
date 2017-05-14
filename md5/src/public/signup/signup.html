@@ -1,10 +1,10 @@
 <div class="container">
   <h2 id="menu-categories-title" class="text-center">Sign Up</h2>
-  <div class="text-center" ng-if="!signUpCtrl.signedUp">
+  <div class="text-center" ng-if="!signUpCtrl.signed">
     Sign up for our Newsletter!
   </div>
 
-  <form name="regForm" ng-if="!signUpCtrl.signedUp" novalidate>
+  <form name="regForm" ng-if="!signUpCtrl.signed" novalidate>
     <fieldset>
     <div class="form-group row">
       <label for="fName" class="col-xs-2 col-form-label">First Name</label>
@@ -64,7 +64,7 @@
     
   </form>
 
-  <div class="text-center" ng-if="signUpCtrl.signedUp">
+  <div class="text-center" ng-if="signUpCtrl.signed">
      Your information has been saved. Go to <a ui-sref="public.myinfo">My Info</a> to see your information.
   </div>
 
