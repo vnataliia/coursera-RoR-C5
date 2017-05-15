@@ -18,7 +18,7 @@
           UserService.signed = true;
           $signUpCtrl.signed = UserService.signed;
           UserService.user = $signUpCtrl.user;
-          UserService.userFav = data;
+          UserService.userFav = result;
         })
         .catch(function (result) {
           $signUpCtrl.itemFound = false;
