@@ -53,7 +53,7 @@
         <p class="help-block" ng-if="userForm.fav.$invalid && userForm.fav.$touched">
             Short name of your favourite dish is required.
         </p>
-        <p class="help-block" ng-if="signUpCtrl.itemNotFound">
+        <p class="help-block" ng-if="signUpCtrl.itemNotFound && userForm.fav.$touched">
             No such menu number exists.
         </p>
       </div>
