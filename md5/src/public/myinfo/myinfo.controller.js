@@ -12,10 +12,10 @@
     console.log("00 show = ", $myInfoCtrl);
 
     $myInfoCtrl.signed = UserService.signed; 
-    $myInfoCtrl.info = UserService.info;
+    $myInfoCtrl.user = UserService.user;
     $myInfoCtrl.fav = UserService.fav;
 
-    if($myInfoCtrl.info.firstname !== undefined){
+    if($myInfoCtrl.user.firstname !== undefined){
       $myInfoCtrl.show = false;
     }
     
