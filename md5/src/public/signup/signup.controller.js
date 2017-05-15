@@ -7,14 +7,23 @@
   SignUpController.$inject = ['UserService','MenuService'];
   function SignUpController(UserService, MenuService){
     var $signUpCtrl = this;
+    $signUpCtrl.signed = UserService.signed;
+    $signUpCtrl.itemFound = false;
     $signUpCtrl.user = {};
-    $signUpCtrl.itemFound = true;
   
     $signUpCtrl.submit = function () {
-      UserService.getFavoriteDish($signUpCtrl.user.favoriteDish)
+      MenuService.getMenuItem($signUpCtrl.user.favDish)
        .then(function (result) {
           $signUpCtrl.itemFound = true;
-          $signUpCtrl.user.favoriteDish = result;
+
+          UserService.signed = true;
+          $signUpCtrl.signed = UserService.signed;
+          UserService.user = $signUpCtrl.user;
+          UserService.registeredUserFavDish = data;
+        
+        
+        
+          $signUpCtrl.user.favDish = result;
           UserService.user = $signUpCtrl.user;
           $signUpCtrl.completed = true;
         })
@@ -22,5 +31,6 @@
           $signUpCtrl.itemFound = false;
         });
     }
+       
   }
 })();
