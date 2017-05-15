@@ -13,7 +13,7 @@
 
     $myInfoCtrl.signed = UserService.signed; 
     $myInfoCtrl.user = UserService.user;
-    $myInfoCtrl.fav = UserService.fav;
+    $myInfoCtrl.fav = UserService.userFav;
 
     if($myInfoCtrl.user.firstname !== undefined){
       $myInfoCtrl.show = false;
