@@ -7,10 +7,9 @@
 
   function UserService() {
     var service = this;
-
     service.signed = false;
     service.user = {};
     service.userFav = {};
-  }
+  };
 
 })();
