@@ -49,7 +49,7 @@
     <div class="form-group row">
       <label for="fav" class="col-xs-2 col-form-label">Your Favourite Dish (short name code)</label>
       <div class="col-xs-10" ng-class="{ 'has-error': (regForm.fav.$invalid && regForm.fav.$touched) || !signUpCtrl.itemFound }">
-        <input type="text" name="fav" class="form-control" id="fav" placeholder="Enter Your Favourite Dish" ng-model="signUpCtrl.user.fav" required/>
+        <input type="text" name="fav" class="form-control" id="fav" placeholder="Enter Your Favourite Dish" ng-model="signUpCtrl.fav" required/>
         <p class="help-block" ng-if="regForm.fav.$invalid && regForm.fav.$touched">
             Short name of your favourite dish is required.
         </p>
