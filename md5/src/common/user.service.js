@@ -9,7 +9,7 @@
     var service = this;
 
     service.signed = false;
-    service.info = {};
+    service.user = {};
     service.fav = {};
   }
 
