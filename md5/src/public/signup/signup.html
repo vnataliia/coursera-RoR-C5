@@ -4,13 +4,13 @@
     Sign up for our Newsletter!
   </div>
 
-  <form name="regForm" ng-if="!signUpCtrl.signed" novalidate>
+  <form name="userForm" ng-if="!signUpCtrl.signed" novalidate>
     <fieldset>
     <div class="form-group row">
       <label for="fName" class="col-xs-2 col-form-label">First Name</label>
-      <div class="col-xs-10" ng-class="{ 'has-error': regForm.fName.$invalid && regForm.fName.$touched }">
+      <div class="col-xs-10" ng-class="{ 'has-error': userForm.fName.$invalid && regForm.fName.$touched }">
         <input type="text" name="fName" class="form-control" id="fName" placeholder="Enter First Name" ng-model="signUpCtrl.user.firstName" required/>
-        <p class="help-block" ng-if="regForm.fName.$invalid && regForm.fName.$touched">
+        <p class="help-block" ng-if="userForm.fName.$invalid && userForm.fName.$touched">
             First name is required.
         </p>
       </div>
@@ -18,9 +18,9 @@
 
     <div class="form-group row">
       <label for="lName" class="col-xs-2 col-form-label">Last Name</label>
-      <div class="col-xs-10" ng-class="{ 'has-error': regForm.lName.$invalid && regForm.lName.$touched }">
+      <div class="col-xs-10" ng-class="{ 'has-error': userForm.lName.$invalid && userForm.lName.$touched }">
         <input type="text" name="lName" class="form-control" id="lName" placeholder="Enter Last Name" ng-model="signUpCtrl.user.lastName" required/>
-        <p class="help-block" ng-if="regForm.lName.$invalid && regForm.lName.$touched">
+        <p class="help-block" ng-if="userForm.lName.$invalid && userForm.lName.$touched">
             Last name is required.
         </p>
       </div>
@@ -28,9 +28,9 @@
 
     <div class="form-group row">
       <label for="email" class="col-xs-2 col-form-label">Email</label>
-      <div class="col-xs-10" ng-class="{ 'has-error': regForm.email.$invalid && regForm.email.$touched }">
+      <div class="col-xs-10" ng-class="{ 'has-error': userForm.email.$invalid && userForm.email.$touched }">
         <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email" ng-model="signUpCtrl.user.email" required/>
-        <p class="help-block" ng-if="regForm.email.$invalid && regForm.email.$touched">
+        <p class="help-block" ng-if="userForm.email.$invalid && userForm.email.$touched">
             Email is required.
         </p>
       </div>
@@ -38,9 +38,9 @@
 
     <div class="form-group row">
       <label for="phoneNumber" class="col-xs-2 col-form-label">Phone Number</label>
-      <div class="col-xs-10" ng-class="{ 'has-error': regForm.phoneNumber.$invalid && regForm.phoneNumber.$touched }">
+      <div class="col-xs-10" ng-class="{ 'has-error': userForm.phoneNumber.$invalid && userForm.phoneNumber.$touched }">
         <input type="tel" name="phoneNumber" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" ng-model="signUpCtrl.user.phoneNumber" required/>
-        <p class="help-block" ng-if="regForm.phoneNumber.$invalid && regForm.phoneNumber.$touched">
+        <p class="help-block" ng-if="userForm.phoneNumber.$invalid && userForm.phoneNumber.$touched">
             Phone Number is required.
         </p>
       </div>
@@ -48,9 +48,9 @@
 
     <div class="form-group row">
       <label for="fav" class="col-xs-2 col-form-label">Your Favourite Dish (short name code)</label>
-      <div class="col-xs-10" ng-class="{ 'has-error': (regForm.fav.$invalid && regForm.fav.$touched) || signUpCtrl.itemNotFound }">
+      <div class="col-xs-10" ng-class="{ 'has-error': (userForm.fav.$invalid && userForm.fav.$touched) || signUpCtrl.itemNotFound }">
         <input type="text" name="fav" class="form-control" id="fav" placeholder="Enter Your Favourite Dish" ng-model="signUpCtrl.user.fav" required/>
-        <p class="help-block" ng-if="regForm.fav.$invalid && regForm.fav.$touched">
+        <p class="help-block" ng-if="userForm.fav.$invalid && userForm.fav.$touched">
             Short name of your favourite dish is required.
         </p>
         <p class="help-block" ng-if="signUpCtrl.itemNotFound">
@@ -58,7 +58,7 @@
         </p>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" ng-disabled="regForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
+    <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
 
     </fieldset>
     
