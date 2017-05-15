@@ -10,7 +10,7 @@
 
     service.signed = false;
     service.user = {};
-    service.fav = {};
+    service.userFav = {};
   }
 
 })();
